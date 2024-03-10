@@ -16,14 +16,20 @@ const Navigation = () => {
 			// preload code
 
 			// simulating
-			setTimeout(() => {
-				setIsAppReady(true);
-				Animated.timing(fadeAnim, {
-					toValue: 1,
-					duration: 500,
-					useNativeDriver: true,
-				}).start();
-			}, 2000);
+			// setTimeout(() => {
+			// 	setIsAppReady(true);
+			// 	Animated.timing(fadeAnim, {
+			// 		toValue: 1,
+			// 		duration: 500,
+			// 		useNativeDriver: true,
+			// 	}).start();
+			// }, 2000);
+			setIsAppReady(true);
+			Animated.timing(fadeAnim, {
+				toValue: 1,
+				duration: 500,
+				useNativeDriver: true,
+			}).start();
 		};
 
 		checkAppReady();
