@@ -21,6 +21,7 @@ function BottomTabs() {
 					borderTopWidth: 1,
 					paddingTop: 13,
 					height: 80,
+					elevation: 0,
 				},
 			}}
 		>
