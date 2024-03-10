@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BottomTabs from "./BottomTabs";
 import PreloadScreen from "../../screens/PreloadScreen";
 import { Animated, View } from "react-native";
+import NoteName from "../../screens/NoteCreation/NoteName";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +42,7 @@ const Navigation = () => {
 				<Animated.View style={{ flex: 1, opacity: fadeAnim }}>
 					<Stack.Navigator>
 						<Stack.Screen name="Main" component={BottomTabs} options={{ headerShown: false }} />
+						<Stack.Screen name="NoteCreateMenu" component={NoteName} options={{ headerShown: false }} />
 					</Stack.Navigator>
 				</Animated.View>
 			) : (

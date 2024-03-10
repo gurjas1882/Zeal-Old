@@ -3,6 +3,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Montserrat_600SemiBold, Montserrat_700Bold_Italic, useFonts } from "@expo-google-fonts/montserrat";
 import TextRecognition from "../components/Learn/TextRecognition";
+import Notes from "../components/Learn/Notes";
 
 const LearnScreen = () => {
 	let [fontsLoaded] = useFonts({
@@ -17,7 +18,7 @@ const LearnScreen = () => {
 	return (
 		<SafeAreaView>
 			<Text style={styles.title}>NOTES</Text>
-			<TextRecognition />
+			<Notes />
 		</SafeAreaView>
 	);
 };
@@ -31,5 +32,7 @@ const styles = StyleSheet.create({
 		color: "black",
 		fontFamily: "Montserrat_700Bold_Italic",
 		fontStyle: "italic",
+		textAlign: "center",
+		marginTop: "5%",
 	},
 });
