@@ -85,7 +85,7 @@ const TextRecognition = () => {
 				encoding: FileSystem.EncodingType.Base64,
 			});
 
-			const apiKey = "";
+			const apiKey = "AIzaSyCjjcP6p0CMtszmsZErlrCKzYbKLGF9Bxc";
 			const apiEndpoint = "https://vision.googleapis.com/v1/images:annotate?key=" + apiKey;
 
 			const requestData = {
