@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
 		color: "white",
 		fontFamily: "Montserrat_700Bold_Italic",
 		letterSpacing: -5,
+		fontStyle: "italic",
 	},
 	underTextContent: {
 		alignItems: "center",
