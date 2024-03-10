@@ -22,7 +22,7 @@ const TopScreen = () => {
 		<SafeAreaView style={[styles.container, { height: Platform.OS === "android" ? screenHeight * 0.25 : screenHeight * 0.3 }]}>
 			<View style={styles.headerContent}>
 				<Text style={styles.headerText}>ZEAL</Text>
-				<Ionicons name="notifications" size={screenWidth * 0.1} color="white" />
+				<Ionicons name="notifications" size={screenWidth * 0.08} color="white" />
 			</View>
 			<View style={styles.underTextContent}>
 				<Text style={styles.underText}>your plant progress</Text>
