@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { View, TextInput, StyleSheet, Text, Button, TouchableOpacity } from "react-native";
-import { useFonts, Montserrat_700Bold_Italic, Montserrat_400Regular_Italic } from "@expo-google-fonts/montserrat";
+import { View, TextInput, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from "react-native";
+import { useFonts, Montserrat_700Bold, Montserrat_400Regular_Italic, Montserrat_300Light } from "@expo-google-fonts/montserrat";
 import { AntDesign } from "@expo/vector-icons";
+import TextRecognition from "../Learn/TextRecognition";
 
 const NoteNameInput = () => {
 	const [text, setText] = useState("");
@@ -11,8 +12,9 @@ const NoteNameInput = () => {
 	};
 
 	let [fontsLoaded] = useFonts({
-		Montserrat_700Bold_Italic,
+		Montserrat_700Bold,
 		Montserrat_400Regular_Italic,
+		Montserrat_300Light,
 	});
 
 	if (!fontsLoaded) {
@@ -20,59 +22,64 @@ const NoteNameInput = () => {
 	}
 
 	return (
-		<View style={styles.container}>
-			<Text style={styles.text}>NAME OF NOTE</Text>
-			<TextInput style={styles.input} onChangeText={handleTextChange} value={text} placeholder="Type here..." />
-			<TouchableOpacity style={styles.touchableButton} onPress={() => console.log("Pressed")}>
-				<Text style={styles.buttonText}>Continue</Text>
-				<AntDesign style={styles.icon} onPress={() => {}} name="arrowright" size={30} color="white" />
-			</TouchableOpacity>
-		</View>
+		<TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+			<View style={styles.container}>
+				<Text style={styles.text}>name of note</Text>
+				<TextInput style={styles.input} onChangeText={handleTextChange} value={text} placeholder="" />
+				<TouchableOpacity style={styles.touchableButton} onPress={() => console.log("Pressed")}>
+					<View style={styles.arrow}>
+						<AntDesign style={styles.icon} name="arrowright" size={26} color="white" />
+					</View>
+				</TouchableOpacity>
+				<Text style={styles.text}>upload images</Text>
+				<TextRecognition />
+			</View>
+		</TouchableWithoutFeedback>
 	);
 };
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: "center",
-		alignItems: "center",
-		padding: 30, // Increased padding for spaciousness
-		backgroundColor: "#f8f8f8", // Subtle background color
+		padding: 30,
+		backgroundColor: "#f8f8f8",
 	},
 	input: {
-		height: 50, // Slightly larger input
-		width: "80%",
-		borderColor: "#ccc", // Softer border
+		height: 50,
+		width: "100%",
+		borderColor: "black",
 		borderWidth: 1,
-		paddingHorizontal: 15, // More padding
-		borderRadius: 10, // Smoother corners
-		marginBottom: 20, // Increased spacing
-		fontFamily: "Montserrat_400Regular_Italic", // Regular font for input
+		paddingHorizontal: 15,
+		borderRadius: 10,
+		borderColor: "black",
+		fontFamily: "Montserrat_400Regular_Italic",
 	},
 	text: {
-		fontSize: 28, // Slightly smaller title
+		fontSize: 36,
 		fontWeight: "bold",
-		color: "#333", // A bit darker
-		fontFamily: "Montserrat_700Bold_Italic",
+		color: "#333",
+		fontFamily: "Montserrat_300Light",
 		fontStyle: "italic",
-		marginBottom: 30, // More space below title
+		marginTop: "10%",
 	},
 	touchableButton: {
-		// Update the key here
-		backgroundColor: "#0056b3", // Matches your existing button color
-		paddingHorizontal: 30,
-		paddingVertical: 15,
-		borderRadius: 10,
+		position: "absolute",
+		bottom: 60,
+		right: 50,
+		flexDirection: "row",
 		alignItems: "center",
-		shadowColor: "#000",
-		shadowOffset: { width: 0, height: 2 },
-		shadowOpacity: 0.2,
-		shadowRadius: 3,
+	},
+	arrow: {
+		backgroundColor: "#256FE5",
+		padding: 13,
+		borderRadius: 100,
+		marginLeft: 10,
 	},
 	buttonText: {
-		color: "white",
-		fontWeight: "bold",
-		fontSize: 16,
+		color: "black",
+		fontWeight: "light",
+		fontFamily: "Montserrat_300Light",
+		fontSize: 20,
 	},
 });
 
