@@ -4,6 +4,7 @@ import ActionCreator from "./ActionCreator";
 import { MaterialIcons, FontAwesome, FontAwesome6 } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { Montserrat_600SemiBold, Montserrat_700Bold_Italic, useFonts } from "@expo-google-fonts/montserrat";
+require('dotenv').config();
 const screenWidth = Dimensions.get("window").width;
 const screenHeight = Dimensions.get("window").height;
 const HomeContent = () => {
