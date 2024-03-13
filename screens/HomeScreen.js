@@ -1,19 +1,27 @@
-import { StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import TopScreen from "../components/Home/TopScreen";
-import HomeContent from "../components/Home/HomeContent";
+import { Dimensions, ScrollView, StatusBar, StyleSheet, View } from "react-native";
+
+import HomeContent from "../components/Screens/Home/HomeContent";
+import HomeHeader from "../components/Screens/Home/HomeHeader";
+import PlantGrowing from "../components/Screens/Home/modules/PlantGrowing";
 
 const HomeScreen = () => {
 	return (
-		<View>
+		<ScrollView style={styles.scrollView}>
 			<StatusBar barStyle="light-content" />
-			<TopScreen />
+			<HomeHeader />
+			<View style={{ alignItems: "center" }}>
+				<PlantGrowing />
+			</View>
 			<HomeContent />
-		</View>
+		</ScrollView>
 	);
 };
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+	scrollView: {
+		maxHeight: Dimensions.get("window").height - 80,
+	},
+});

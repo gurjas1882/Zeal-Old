@@ -1,10 +1,10 @@
-import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 const PlantScreen = () => {
 	return (
 		<View>
-			<Image></Image>
+			<Text>PlantScreen</Text>
 		</View>
 	);
 };

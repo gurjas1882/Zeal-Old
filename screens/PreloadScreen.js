@@ -1,6 +1,6 @@
-import { View, Text, ActivityIndicator, StyleSheet } from "react-native";
+import { Montserrat_400Regular_Italic, Montserrat_700Bold_Italic, useFonts } from "@expo-google-fonts/montserrat";
 import React from "react";
-import { useFonts, Montserrat_700Bold_Italic, Montserrat_400Regular_Italic } from "@expo-google-fonts/montserrat";
+import { StyleSheet, Text, View } from "react-native";
 
 const PreloadScreen = () => {
 	let [fontsLoaded] = useFonts({

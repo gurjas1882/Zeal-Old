@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import UserDisplay from "../components/Profile/UserDisplay";
+import { StyleSheet, View } from "react-native";
+import UserDisplay from "../components/Screens/Profile/UserDisplay";
 
 const ProfileScreen = () => {
 	return (

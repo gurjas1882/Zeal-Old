@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import BottomTabs from "./BottomTabs";
+import React, { useEffect, useState } from "react";
+import { Animated } from "react-native";
+import CreateNoteScreen from "../../screens/Notes/CreateNoteScreen";
+import KnowledgeTestingScreen from "../../screens/Notes/KnowledgeTestingScreen";
 import PreloadScreen from "../../screens/PreloadScreen";
-import { Animated, View } from "react-native";
-import NoteName from "../../screens/NoteCreation/NoteName";
+import BottomTabs from "./BottomTabs";
 
 const Stack = createNativeStackNavigator();
 
@@ -42,7 +43,8 @@ const Navigation = () => {
 				<Animated.View style={{ flex: 1, opacity: fadeAnim }}>
 					<Stack.Navigator>
 						<Stack.Screen name="Main" component={BottomTabs} options={{ headerShown: false }} />
-						<Stack.Screen name="NoteCreateMenu" component={NoteName} options={{ headerShown: false }} />
+						<Stack.Screen name="NoteCreateMenu" component={CreateNoteScreen} options={{ headerShown: false }} />
+						<Stack.Screen name="KnowledgeTesting" component={KnowledgeTestingScreen} options={{ headerShown: false }} />
 					</Stack.Navigator>
 				</Animated.View>
 			) : (
